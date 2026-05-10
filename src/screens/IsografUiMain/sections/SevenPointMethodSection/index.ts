@@ -1,0 +1,1 @@
+export { SevenPointMethodSection } from "./SevenPointMethodSection";

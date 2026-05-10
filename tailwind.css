@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  button,
+  input,
+  select,
+  textarea {
+    @apply appearance-none bg-transparent border-0 outline-none;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:var(--greenfield-dm-sans-reg-b2-14pt-font-weight),var(--greenfield-dm-sans-exbold-h1-48pt-font-weight),400,500,var(--greenfield-dm-sans-semibold-h3-36pt-font-weight),700,600|Libre+Baskerville:400,italic|Roboto:500,400,600");
+
+:root {
+  --greenfield-dm-sans-exbold-h1-48pt-font-family: "DM Sans", Helvetica;
+  --greenfield-dm-sans-exbold-h1-48pt-font-size: 48px;
+  --greenfield-dm-sans-exbold-h1-48pt-font-style: normal;
+  --greenfield-dm-sans-exbold-h1-48pt-font-weight: 800;
+  --greenfield-dm-sans-exbold-h1-48pt-letter-spacing: -0.96px;
+  --greenfield-dm-sans-exbold-h1-48pt-line-height: 120.00000476837158%;
+  --greenfield-dm-sans-reg-b2-14pt-font-family: "DM Sans", Helvetica;
+  --greenfield-dm-sans-reg-b2-14pt-font-size: 16px;
+  --greenfield-dm-sans-reg-b2-14pt-font-style: normal;
+  --greenfield-dm-sans-reg-b2-14pt-font-weight: 400;
+  --greenfield-dm-sans-reg-b2-14pt-letter-spacing: 0px;
+  --greenfield-dm-sans-reg-b2-14pt-line-height: 175.99999904632568%;
+  --greenfield-dm-sans-semibold-h3-36pt-font-family: "DM Sans", Helvetica;
+  --greenfield-dm-sans-semibold-h3-36pt-font-size: 36px;
+  --greenfield-dm-sans-semibold-h3-36pt-font-style: normal;
+  --greenfield-dm-sans-semibold-h3-36pt-font-weight: 600;
+  --greenfield-dm-sans-semibold-h3-36pt-letter-spacing: 0px;
+  --greenfield-dm-sans-semibold-h3-36pt-line-height: 40px;
+  --spacing-micro-LG: 8px;
+  --spacing-related-elements-SM: 16px;
+  --spacing-unrelated-elements-SM: 32px;
+}
+
+/*
+
+To enable a theme in your HTML, simply add one of the following data attributes to an HTML element, like so:
+
+<body data-spacing-mode="normal">
+    <!-- the rest of your content -->
+</body>
+
+You can apply the theme on any DOM node, not just the `body`
+
+*/
+
+[data-spacing-mode="normal"] {
+  --spacing-micro-LG: 8px;
+  --spacing-related-elements-SM: 16px;
+  --spacing-unrelated-elements-SM: 32px;
+}
+
+[data-spacing-mode="large"] {
+  --spacing-micro-LG: 16px;
+  --spacing-related-elements-SM: 32px;
+  --spacing-unrelated-elements-SM: 64px;
+}
+
+:root {
+  --animate-spin: spin 1s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s var(--animation-delay, 0s) ease forwards;
+}
+
+.animate-fade-up {
+  animation: fade-up 1s var(--animation-delay, 0s) ease forwards;
+}
+
+.animate-marquee {
+  animation: marquee var(--duration) infinite linear;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration) linear infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 8s infinite;
+}
+
+.animate-spin {
+  animation: var(--animate-spin);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes image-glow {
+  0% {
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.74, 0.25, 0.76, 1);
+  }
+
+  10% {
+    opacity: 0.7;
+    animation-timing-function: cubic-bezier(0.12, 0.01, 0.08, 0.99);
+  }
+
+  to {
+    opacity: 0.4;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  90%,
+  to {
+    background-position: calc(-100% - var(--shimmer-width)) 0;
+  }
+
+  30%,
+  60% {
+    background-position: calc(100% + var(--shimmer-width)) 0;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  0% {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}

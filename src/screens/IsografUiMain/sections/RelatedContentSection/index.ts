@@ -1,0 +1,1 @@
+export { RelatedContentSection } from "./RelatedContentSection";

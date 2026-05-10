@@ -1,0 +1,1 @@
+export { CertificationFactorsSection } from "./CertificationFactorsSection";
